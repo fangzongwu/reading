@@ -12,13 +12,10 @@ class MainContainer extends Component {
 	constructor(props) {
 		super(props);
 	};
-	componentDidMount() {
-		NewsCategory.getCategory();
-	}
 	render() {
 		return (
 			<View>  
-				<Text>123 {NewsCategory.a.ab}</Text>
+				<Text>123</Text>
 			</View>
 		);
 	}
