@@ -39,11 +39,20 @@ const TabNavigators = TabNavigator({
 	tabBarPosition: 'bottom',
 	tabBarOptions: {
 		activeTintColor: '#20CFC9',
+		inactiveTintColor: '#20CFC9',
+		showIcon: true, //针对Android
+		indicatorStyle: {//针对Android
+			height: 0,
+		},
 		labelStyle: {
 			fontSize: 13,
 		},
 		style: {
-			paddingBottom: 3,  
+			paddingBottom: 3,
+			backgroundColor: "#fff",
+		},
+		iconStyle: {
+			// color: "#fff",
 		}
 	},
 })
