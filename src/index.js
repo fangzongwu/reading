@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {Text} from 'react-native';
 import {StackNavigator, TabNavigator, } from "react-navigation";
 import MainContainer from "./containers/MainContainer";
 import CategoryContainer from "./containers/CategoryContainer";
@@ -20,7 +21,18 @@ const TabNavigators = TabNavigator({
 				size={20}   
 				color="#20CFC9"  
 			/>
-		)}},
+		),headerRight: 
+			<Icon.Button  
+				name="pencil" 
+				backgroundColor="transparent"
+				underlayColor="transparent"
+				activeOpacity={0.8}
+				style={{marginRight: 10}}
+				onPress={() => {
+					alert(1);
+				}}  
+			/>
+}},
 	Feedback: {screen: Feedback, navigationOptions: { title: "幽默", tabBarIcon: () => (
 			<Icon  
 				name="picture-o" 

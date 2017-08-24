@@ -19,7 +19,7 @@ let tempTypeIds = [];
 @observer
 export default class CategoryContainer extends Component {
 	static navigationOpations = {
-		// title: "首页",
+		// title: "分类",
 	};
 	constructor(props) {
 		super(props);

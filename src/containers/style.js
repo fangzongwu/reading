@@ -47,7 +47,7 @@ export default StyleSheet.create({
     backgroundColor: '#3e9ce9'
   },
   btnText: {
-    fontSize: 16,
+    fontSize: 14,
     textAlign: 'center',
     color: '#fff'
   },
