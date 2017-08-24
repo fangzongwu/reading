@@ -4,6 +4,7 @@ import { View, StyleSheet, ListView } from "react-native";
 const propTypes = {
 	items: PropTypes.array,
 	renderItem: PropTypes.func,
+	style: View.propTypes.style,
 	itemsPerRow: PropTypes.number,
 	onEndReached: PropTypes.func,
 	scrollEnabled: PropTypes.func,
@@ -13,6 +14,7 @@ const propTypes = {
 const GridView = ({
 	items,
 	renderItem,
+	style,
 	itemsPerRow,
 	onEndReached,
 	scrollEnabled,
@@ -29,6 +31,10 @@ const GridView = ({
 				group.push(item);
 			}
 		})
+		if(group.length > 0) {
+			itemsGroups.push(group);
+		}
+		return itemsGroups;
 	};
 
 	const renderGroup = (group) => {
@@ -51,13 +57,14 @@ const GridView = ({
 
 	return (
 		<ListView 
-			initialListSize={1}
+			initialListSize={1} 
 			dataSource={ds.cloneWithRows(groups)}
-			renderRow={renderGroup}
-			onEndReached={onEndReached}
-			scrollEnabled={scrollEnabled}
-			pageSize={pageSize || 1}
-			enableEmptySections
+			renderRow={renderGroup} 
+			style={style} 
+			onEndReached={onEndReached} 
+			scrollEnabled={scrollEnabled} 
+			pageSize={pageSize || 1} 
+			enableEmptySections 
 		/>
 	);
 }

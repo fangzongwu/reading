@@ -29,5 +29,26 @@ export default StyleSheet.create({
 	no_data: {
 
 	},
-	
+	categoryBtn: {
+		margin: 10,
+	    padding: 10,
+	    borderRadius: 10,
+	    borderWidth: 1,
+	    borderColor: '#dddddd'
+	},
+	categoryText: {
+		fontSize: 16,
+		textAlign: "center",
+	},
+	sureBtn: {
+    margin: 10,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: '#3e9ce9'
+  },
+  btnText: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: '#fff'
+  },
 })
