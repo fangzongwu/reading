@@ -49,6 +49,7 @@ const TabNavigators = TabNavigator({
 		)}},
 },{
 	tabBarPosition: 'bottom',
+	swipeEnabled: false,
 	tabBarOptions: {
 		activeTintColor: '#20CFC9',
 		inactiveTintColor: '#20CFC9',
@@ -60,7 +61,6 @@ const TabNavigators = TabNavigator({
 			fontSize: 13,
 		},
 		style: {
-			paddingBottom: 3,
 			backgroundColor: "#fff",
 		},
 		iconStyle: {

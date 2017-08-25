@@ -3,6 +3,7 @@ import {View, Text, Button} from "react-native";
 import ScrollableTabView, {DefaultTabBar} from "react-native-scrollable-tab-view";
 import Icon from "react-native-vector-icons/FontAwesome";
 import {observer} from "mobx-react";
+
 import NewsCategory from "./../models/newsCategory";
 
 @observer
@@ -13,14 +14,19 @@ class MainContainer extends Component {
 	constructor(props) {
 		super(props);
 	};
+	componentDidMount() {
+		NewsCategory.getCategory();
+	}
 	render() {
+		const {typeList} = NewsCategory.showapi_res_body;
+		const content = typeList.map(list => {
+			return (
+				<Text tabLabel="12">12</Text>
+			);
+		})
 		return (
 			<ScrollableTabView renderBar={() => <DefaultTabBar />}>
-				<Text tabLabel="体育迷">体育迷</Text>
-				<Text tabLabel="段子手">段子手</Text>
-				<Text tabLabel="养生堂">养生堂</Text>
-				<Text tabLabel="私房话">私房话</Text>
-				<Text tabLabel="八卦精">八卦精</Text>
+				
 			</ScrollableTabView>
 		);
 	}
