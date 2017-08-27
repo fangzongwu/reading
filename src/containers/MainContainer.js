@@ -5,6 +5,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import {observer} from "mobx-react";
 
 import NewsCategory from "./../models/newsCategory";
+import ListView from "./../components/ListView";
 
 @observer
 class MainContainer extends Component {
@@ -15,18 +16,25 @@ class MainContainer extends Component {
 		super(props);
 	};
 	componentDidMount() {
-		NewsCategory.getCategory();
+		NewsCategory.getCategoryDetaile(19);
 	}
 	render() {
-		const {typeList} = NewsCategory.showapi_res_body;
-		const content = typeList.map(list => {
+		const {contentlist} = NewsCategory.showapi_res_detaile_body;
+		const categoryList = contentlist.map((list) => {
 			return (
-				<Text tabLabel="12">12</Text>
+				<ListView
+					key={list.id} 
+					text={list.title}
+					uri='https://mmbiz.qpic.cn/mmbiz_jpg/M3knBiaKag9vQtAsPUHQEj1YFPzdL6TTiadkLWfrBia7eNvia0MLpFH01YoqNx54vwXZmyBCEULLFTGGTYwGmtyW1Q/0?wx_fmt=jpeg'
+					containerStyle={{width: 60, height: 60}}
+				/>
 			);
 		})
 		return (
 			<ScrollableTabView renderBar={() => <DefaultTabBar />}>
-				
+				<View tabLabel="体育迷">
+					{categoryList}
+				</View>
 			</ScrollableTabView>
 		);
 	}
