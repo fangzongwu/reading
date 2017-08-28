@@ -25,7 +25,7 @@ const ListView = ({
 			<View style={styles.textView}>
 				<Text 
 					style={style}
- 					numberOfLines={1} 
+					numberOfLines={2}
 				>
 					{text}
 				</Text>
@@ -47,6 +47,9 @@ const styles = StyleSheet.create({
 		marginLeft: 5,
 		marginRight: 5,
 		marginBottom: 15,
+		borderWidth: 0.5,
+		borderColor: "#e1e1e1",
+		backgroundColor: "#fff",
 
 	},
 	textView: {

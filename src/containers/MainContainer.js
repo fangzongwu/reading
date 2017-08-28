@@ -1,11 +1,11 @@
 import React, {Component} from "react";
-import {View, Text, Button} from "react-native";
-import ScrollableTabView, {DefaultTabBar} from "react-native-scrollable-tab-view";
+import {View, Text, Button, ListView} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import {observer} from "mobx-react";
 
 import NewsCategory from "./../models/newsCategory";
-import ListView from "./../components/ListView";
+import ListViews from "./../components/ListView";
+
 
 @observer
 class MainContainer extends Component {
@@ -20,22 +20,22 @@ class MainContainer extends Component {
 	}
 	render() {
 		const {contentlist} = NewsCategory.showapi_res_detaile_body;
-		const categoryList = contentlist.map((list) => {
-			return (
-				<ListView
-					key={list.id} 
-					text={list.title}
-					uri='https://mmbiz.qpic.cn/mmbiz_jpg/M3knBiaKag9vQtAsPUHQEj1YFPzdL6TTiadkLWfrBia7eNvia0MLpFH01YoqNx54vwXZmyBCEULLFTGGTYwGmtyW1Q/0?wx_fmt=jpeg'
-					containerStyle={{width: 60, height: 60}}
-				/>
-			);
-		})
+		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+		const dataSource = ds.cloneWithRows(contentlist.slice());
 		return (
-			<ScrollableTabView renderBar={() => <DefaultTabBar />}>
-				<View tabLabel="体育迷">
-					{categoryList}
-				</View>
-			</ScrollableTabView>
+			<View>
+				<ListView 
+					dataSource={dataSource}
+					renderRow={(rowData) => (
+						<ListViews
+							key={rowData.id} 
+							text={rowData.title}
+							uri={rowData.contentImg}
+							containerStyle={{width: 60, height: 60}}
+						/>
+					)}
+				/>
+			</View>
 		);
 	}
 }
