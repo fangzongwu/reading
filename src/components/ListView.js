@@ -54,6 +54,8 @@ const styles = StyleSheet.create({
 	},
 	textView: {
 		padding: 5,
+		backgroundColor: "#fff",
+		flex: 4,
 	}
 })
 

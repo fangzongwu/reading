@@ -31,7 +31,8 @@ class MainContainer extends Component {
 							key={rowData.id} 
 							text={rowData.title}
 							uri={rowData.contentImg}
-							containerStyle={{width: 60, height: 60}}
+							containerStyle={{width: 60, height: 60, flex: 1,}}
+							style={{backgroundColor: "#fff"}}
 						/>
 					)}
 				/>
