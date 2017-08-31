@@ -1,11 +1,13 @@
 import React, {Component} from "react";
 import {Text} from 'react-native';
 import {StackNavigator, TabNavigator, } from "react-navigation";
+import Icon from "react-native-vector-icons/FontAwesome";
+
 import MainContainer from "./containers/MainContainer";
 import CategoryContainer from "./containers/CategoryContainer";
 import Feedback from "./containers/Feedback";
 import About from "./containers/About";
-import Icon from "react-native-vector-icons/FontAwesome";
+import NewsDetails from "./containers/NewsDetails";
 
 const TabNavigators = TabNavigator({
 	Main: {screen: MainContainer, navigationOptions: { title: "首页", tabBarIcon: () => (
@@ -78,6 +80,15 @@ export default StackNavigator({
 			headerTintColor: "#fff",
 		}
 	},
+	//webView页面;
+	web: {
+		path: "newsData",
+		screen: NewsDetails,
+		navigationOptions: {
+			headerStyle: {backgroundColor: "#20CFC9"},
+			headerTintColor: "#fff",
+		}
+	}
 }, {
 	headerMode: "screen",
 })

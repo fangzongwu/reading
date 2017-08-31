@@ -7,6 +7,8 @@ const propTypes = {
 	containerStyle: Image.propTypes.style,
 	uri: PropTypes.string,
 	text: PropTypes.string,
+	articleText: PropTypes.string,
+	timeText: PropTypes.string,
 }
 
 const ListView = ({
@@ -15,6 +17,8 @@ const ListView = ({
 	containerStyle,
 	uri,
 	text,
+	articleText,
+	timeText,
 }) => (
 	<TouchableOpacity onPress={onPress}>
 		<View style={styles.container}>
@@ -29,6 +33,14 @@ const ListView = ({
 				>
 					{text}
 				</Text>
+				<View style={styles.articleView}>
+					<Text style={[styles.articleText, {color: "#3e9ce9"}]}>
+						{articleText}
+					</Text>
+					<Text style={styles.articleText}>
+						{timeText}
+					</Text>
+				</View>
 			</View>
 		</View>
 	</TouchableOpacity>
@@ -46,8 +58,9 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		marginLeft: 5,
 		marginRight: 5,
-		marginBottom: 15,
-		borderWidth: 0.5,
+		paddingTop: 8,
+		paddingBottom: 8,
+		borderBottomWidth: 1,
 		borderColor: "#e1e1e1",
 		backgroundColor: "#fff",
 
@@ -56,6 +69,14 @@ const styles = StyleSheet.create({
 		padding: 5,
 		backgroundColor: "#fff",
 		flex: 4,
+	},
+	articleView: {
+		flexDirection: "row",
+		alignItems: "center",
+		marginTop: 10, 
+	},
+	articleText: {
+		flex: 1,
 	}
 })
 
