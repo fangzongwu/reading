@@ -48,7 +48,6 @@ class NewsCategory {
 		if(ret) {
 			runInAction("request success", () => {
 				this.showapi_res_detaile_body = Object.assign({}, ret.showapi_res_body.pagebean);
-				console.log(this.showapi_res_detaile_body);
 			})
 		}
 	}
@@ -66,7 +65,6 @@ class NewsCategory {
 		if(ret) {
 			runInAction("request success", () => {
 				this.showapi_res_image_body = Object.assign({}, ret.showapi_res_body);
-				console.log(this.showapi_res_image_body);
 			})
 		}
 	}

@@ -51,5 +51,14 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: '#fff'
   },
-  
+  smailBlock: {
+  	padding: 10,
+  	marginBottom: 10,
+  },
+  smailText: {
+  	fontSize: 18,
+  	textAlign: "center",
+  	marginTop: 8,
+  	marginBottom: 8,
+  }
 })

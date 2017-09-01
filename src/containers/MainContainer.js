@@ -19,15 +19,12 @@ class MainContainer extends Component {
 		}
 	};
 	componentDidMount() {
-		NewsCategory.getCategoryDetaile(19).then(() => {
+		NewsCategory.getCategoryDetaile(0).then(() => {
 			this.setState({
 				isRefreshing: false,
 			})
 		});
 	}
-	// _onPress() {
-	// 	navigate("web");
-	// }
 	render() {
 		const {navigate} = this.props.navigation;
 		const {contentlist} = NewsCategory.showapi_res_detaile_body;

@@ -42,7 +42,7 @@ const TabNavigators = TabNavigator({
 				color="#20CFC9"  
 			/>
 		)}},
-	About: {screen: About, navigationOptions: { title: "关于", tabBarIcon: () => (
+	About: {screen: About, navigationOptions: { title: "我的", tabBarIcon: () => (
 			<Icon  
 				name="user" 
 				size={20}   
@@ -52,6 +52,7 @@ const TabNavigators = TabNavigator({
 },{
 	tabBarPosition: 'bottom',
 	swipeEnabled: false,
+	animationEnabled: false,
 	tabBarOptions: {
 		activeTintColor: '#20CFC9',
 		inactiveTintColor: '#20CFC9',
